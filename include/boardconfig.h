@@ -13,8 +13,8 @@
 #define KLINETX 17
 #define J1850TX 18
 #define J1850RX 19
-#define CANTX 25
-#define CANRX 26
+#define CANTX GPIO_NUM_25
+#define CANRX GPIO_NUM_26
 #define VREFADC 34 //VCC--10K--VREFADC--2.7K--GND
 
 #define BLE_SERVICE_UUID    "e0bf7add-8f80-4c51-b4ed-5d136c6c6837" //"19fdde56-369e-4785-bce9-eed84ecb9999" UART service UUID
