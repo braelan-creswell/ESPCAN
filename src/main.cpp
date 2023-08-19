@@ -21,7 +21,7 @@ void printFrame(CAN_FRAME *message)
 
 void gotHundred(CAN_FRAME *frame)
 {
-  Serial.print("Got special frame!  ");
+  //Serial.print("Got special frame!  ");
   printFrame(frame);
 }
 
@@ -35,7 +35,7 @@ void setup() {
     while (1);
   }
   Serial.println("CAN Bus Initialized");
-  CAN_FRAME txFrame;
+  /*CAN_FRAME txFrame;
   txFrame.rtr = 0;
   txFrame.id = 0x123;
   txFrame.extended = false;
@@ -44,9 +44,9 @@ void setup() {
   txFrame.data.uint8[1] = 0x1A;
   txFrame.data.uint8[2] = 0xFF;
   txFrame.data.uint8[3] = 0x5D;
-  CAN0.sendFrame(txFrame);
+  CAN0.sendFrame(txFrame);*/
 
-  CAN0.watchFor(0x100, 0xF00); //setup a special filter
+  //CAN0.watchFor(0x100, 0xF00); //setup a special filter
   CAN0.watchFor(); //then let everything else through anyway
   CAN0.setCallback(0, gotHundred); //callback on that first special filter
 
@@ -72,11 +72,11 @@ void loop() {
     //CAN.sendFrame(message);
   }
   //or, just plain send traffic periodically
-    delay(1000);
+    /* delay(1000);
     message.id++;
     message.length = 8;
     for(i=0;i<message.length;i++) {
      message.data.uint8[i]++;
     }
-    CAN0.sendFrame(message);
+    CAN0.sendFrame(message); */
 }
